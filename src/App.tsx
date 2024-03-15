@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Hamburgers from "./pages/Hamburgers/Hamburgers";
 import Entradinhas from "./pages/Entradinhas/Entradinhas";
+import Sobremesas from "./pages/Sobremesas/Sobremesas"
+import Bebidas from "./pages/Bebidas/Bebidas"
 
 export default function App() {
   return (
@@ -10,6 +12,8 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/hamburgers" element={<Hamburgers />} />
         <Route path="/entradas" element={<Entradinhas />} />
+        <Route path="/sobremesas" element={<Sobremesas />} />
+        <Route path="/bebidas" element={<Bebidas />} />
       </Routes>
     </BrowserRouter>
   );

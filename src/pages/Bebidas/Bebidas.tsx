@@ -6,7 +6,7 @@ import {
   ProductCardPrice,
 } from "../../components/ProductCard/ProductCard.style";
 
-export default function Entradinhas() {
+export default function Bebidas() {
   const [isLoading, setIsLoading] = useState(false);
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
@@ -33,8 +33,8 @@ export default function Entradinhas() {
     }
   }
 
-  const getEntradinhas = async () => {
-    const url = "http://localhost:8000/appetizers"
+  const getBebidas = async () => {
+    const url = "http://localhost:8000/beverages"
     setIsLoading(true);
     try {
       const response = await fetch(url)
@@ -54,12 +54,12 @@ export default function Entradinhas() {
   }, []);
 
   useEffect(() => {
-    getEntradinhas()
+    getBebidas()
   }, []);
 
   return (
     <Layout>
-      <h1>Entradinhas</h1>
+      <h1>Bebidas</h1>
       <ProductCategories>
         {isLoading ? (<p>Carregando</p>)
           : (
@@ -80,7 +80,7 @@ export default function Entradinhas() {
                   <Button onClick={() => { }}>Adicionar</Button>
                 </ProductCardContent>
                 <ProductCardPrice>
-                  {priceFormat(product.values)}
+                  {priceFormat(product.value)}
                 </ProductCardPrice>
                 <img src={product.image} alt={product.title} />
               </ProductCard>
